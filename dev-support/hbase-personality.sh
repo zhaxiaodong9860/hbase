@@ -219,8 +219,6 @@ function shadedjars_rebuild
 
 ###################################################
 
-add_test_type hadoopcheck
-
 ## @description  hadoopcheck file filter
 ## @audience     private
 ## @stability    evolving
@@ -465,6 +463,7 @@ function hbaseanti_patchfile
 function mvnsite_filefilter
 {
   local filename=$1
+  return
 
   if [[ ${BUILDTOOL} = maven ]]; then
     if [[ ${filename} =~ src/site || ${filename} =~ src/main/asciidoc ]]; then
